@@ -39,7 +39,7 @@ const MobileNavbar = () => {
         {isMenuOpen && (
           <div
             ref={ref}
-            className="absolute top-full translate-y-1 bg-white/70 backdrop-blur-sm pt-4 pb-6 px-3 w-full sm:max-w-xs right-0 border-2 border-neutral-100 rounded-2xl"
+            className="absolute z-50 top-full translate-y-1 bg-white/70 backdrop-blur-sm pt-4 pb-6 px-3 w-full sm:max-w-xs right-0 border-2 border-neutral-100 rounded-2xl"
           >
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => {
