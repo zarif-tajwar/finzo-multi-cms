@@ -11,5 +11,6 @@
 @layer base {
   :root {
     --color-primary: 255 221 51;
+    --color-offwhite: 249 250 251;
   }
 }

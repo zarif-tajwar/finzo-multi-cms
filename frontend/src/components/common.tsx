@@ -15,7 +15,7 @@ export const SecondHeading = React.forwardRef<
   return (
     <Comp
       className={cn(
-        "max-w-2xl text-wrap text-center text-6xl font-medium",
+        "mx-auto mb-9 max-w-2xl text-balance text-center text-4xl font-bold sm:text-5xl sm:font-medium md:text-6xl",
         className,
       )}
       ref={ref}
@@ -37,7 +37,10 @@ export const ThirdHeading = React.forwardRef<
   const Comp = asChild ? Slot : "h3";
   return (
     <Comp
-      className={cn("text-4xl font-medium", className)}
+      className={cn(
+        "text-balance text-2xl font-bold  sm:text-3xl md:text-4xl md:font-medium",
+        className,
+      )}
       ref={ref}
       {...props}
     />
@@ -55,7 +58,10 @@ export const Paragraph = React.forwardRef<HTMLHeadingElement, ParagraphProps>(
     const Comp = asChild ? Slot : "p";
     return (
       <Comp
-        className={cn("max-w-md text-2xl text-gray-500", className)}
+        className={cn(
+          "text-base text-gray-500 sm:text-lg md:text-xl lg:text-2xl",
+          className,
+        )}
         ref={ref}
         {...props}
       />
@@ -72,7 +78,7 @@ export interface ContainerProps
 }
 
 export const containerVariants = cva(
-  "max-w-screen-container mx-auto w-full px-4 md:px-8",
+  "mx-auto w-full max-w-screen-container px-4 md:px-8",
 );
 
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
@@ -89,3 +95,26 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
 );
 
 Container.displayName = "Container";
+
+export interface SectionProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof sectionVariants> {
+  asChild?: boolean;
+}
+
+export const sectionVariants = cva("py-20");
+
+export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
+  ({ className, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "section";
+    return (
+      <Comp
+        className={cn(sectionVariants({}), className)}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+
+Section.displayName = "Section";

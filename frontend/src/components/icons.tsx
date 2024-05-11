@@ -47,6 +47,156 @@ export const Arrow = ({ ...props }: SvgIconProps) => {
     </svg>
   );
 };
+export const MobileIcon = ({ ...props }: SvgIconProps) => {
+  return (
+    <svg
+      width="28"
+      height="36"
+      viewBox="0 0 28 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M26.3942 10.2533V25.7463C26.3942 31.9435 24.8449 33.4928 18.6477 33.4928H9.35195C3.15476 33.4928 1.60547 31.9435 1.60547 25.7463V10.2533C1.60547 4.05613 3.15476 2.50684 9.35195 2.50684H18.6477C24.8449 2.50684 26.3942 4.05613 26.3942 10.2533Z"
+        stroke="currentColor"
+        strokeWidth="3.09859"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.0986 7.9292H10.9014"
+        stroke="currentColor"
+        strokeWidth="2.32394"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14 28.9996C15.3263 28.9996 16.4015 27.9244 16.4015 26.5982C16.4015 25.2719 15.3263 24.1968 14 24.1968C12.6738 24.1968 11.5986 25.2719 11.5986 26.5982C11.5986 27.9244 12.6738 28.9996 14 28.9996Z"
+        stroke="currentColor"
+        strokeWidth="2.32394"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+export const LineChartIcon = ({ ...props }: SvgIconProps) => {
+  return (
+    <svg
+      width="38"
+      height="38"
+      viewBox="0 0 38 38"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5.05613 3.50732C5.91178 3.50732 6.60543 4.20097 6.60543 5.05662V29.8454C6.60543 30.701 7.29907 31.3946 8.15472 31.3946H32.9435C33.7991 31.3946 34.4928 32.0883 34.4928 32.9439C34.4928 33.7996 33.7991 34.4932 32.9435 34.4932H8.15472C5.58777 34.4932 3.50684 32.4123 3.50684 29.8454V5.05662C3.50684 4.20097 4.20048 3.50732 5.05613 3.50732Z"
+        fill="currentColor"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M34.0393 13.257C34.6443 13.862 34.6443 14.843 34.0393 15.448L26.9346 22.5528C25.1194 24.3679 22.1766 24.3679 20.3614 22.5528L16.997 19.1884C16.392 18.5833 15.411 18.5833 14.806 19.1884L11.5745 22.4199C10.9695 23.0249 9.9885 23.0249 9.38347 22.4199C8.77843 21.8148 8.77843 20.8339 9.38347 20.2288L12.615 16.9973C14.4301 15.1822 17.373 15.1822 19.1881 16.9973L22.5525 20.3617C23.1575 20.9668 24.1385 20.9668 24.7435 20.3617L31.8483 13.257C32.4533 12.652 33.4343 12.652 34.0393 13.257Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+export const MoneySendIcon = ({ ...props }: SvgIconProps) => {
+  return (
+    <svg
+      width="44"
+      height="44"
+      viewBox="0 0 44 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M17.417 25.2083C17.417 26.9866 18.792 28.4166 20.4787 28.4166H23.9253C25.392 28.4166 26.5837 27.1699 26.5837 25.6116C26.5837 23.9433 25.8503 23.3383 24.7687 22.9533L19.2503 21.0283C18.1687 20.6433 17.4353 20.0566 17.4353 18.3699C17.4353 16.8299 18.627 15.5649 20.0936 15.5649H23.5403C25.227 15.5649 26.602 16.9949 26.602 18.7733"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22 13.75V30.25"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M40.3337 21.9998C40.3337 32.1198 32.1203 40.3332 22.0003 40.3332C11.8803 40.3332 3.66699 32.1198 3.66699 21.9998C3.66699 11.8798 11.8803 3.6665 22.0003 3.6665"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M40.3333 10.9998V3.6665H33"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M31.167 12.8332L40.3337 3.6665"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+export const RecipeIcon = ({ ...props }: SvgIconProps) => {
+  return (
+    <svg
+      width="43"
+      height="44"
+      viewBox="0 0 43 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M39.167 10.9998V15.4365C39.167 18.3332 37.417 20.1665 34.652 20.1665H28.667V7.3515C28.667 5.3165 30.2595 3.6665 32.202 3.6665C34.1095 3.68484 35.8595 4.4915 37.1195 5.8115C38.3795 7.14984 39.167 8.98317 39.167 10.9998Z"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.16699 12.8332V38.4998C4.16699 40.0215 5.81195 40.8832 6.96695 39.9665L9.95949 37.6198C10.6595 37.0698 11.6395 37.1432 12.2695 37.8032L15.1745 40.8648C15.857 41.5798 16.977 41.5798 17.6595 40.8648L20.5995 37.7848C21.212 37.1432 22.192 37.0698 22.8745 37.6198L25.867 39.9665C27.022 40.8648 28.667 40.0032 28.667 38.4998V7.33317C28.667 5.3165 30.242 3.6665 32.167 3.6665H12.917H11.167C5.91699 3.6665 4.16699 6.94817 4.16699 10.9998V12.8332Z"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.167 16.5H21.667"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.4795 23.8335H20.3545"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 export const Logo = ({ className, ...props }: SvgIconProps) => {
   return (
     <svg

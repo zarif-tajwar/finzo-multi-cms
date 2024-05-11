@@ -14,9 +14,13 @@ const config: Config = {
       },
       colors: {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
+        offwhite: "rgb(var(--color-offwhite) / <alpha-value>)",
       },
       screens: {
         container: "84rem",
+      },
+      borderRadius: {
+        "4xl": "2rem",
       },
     },
   },

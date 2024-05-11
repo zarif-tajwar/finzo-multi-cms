@@ -1,4 +1,5 @@
 import { Button } from "../button";
+import { Paragraph } from "../common";
 import HeroVisual from "./hero-visual";
 
 const Hero = () => {
@@ -8,10 +9,10 @@ const Hero = () => {
         <div className="grid items-center gap-x-8 gap-y-8 lg:grid-cols-[1.2fr_1fr]">
           <HeroVisual />
           <div className="flex flex-col items-center pt-0 lg:block lg:max-w-[32.625rem]">
-            <h1 className="mb-6 text-balance text-center text-5xl font-medium tracking-tight sm:text-6xl md:text-7xl lg:text-left">
+            <h1 className="mb-6 text-balance text-center text-5xl font-bold tracking-tight sm:text-6xl sm:font-medium md:text-7xl lg:text-left xl:text-8xl">
               Control your financial future easily
             </h1>
-            <p className="mb-16 max-w-screen-sm text-center text-lg text-neutral-500 sm:text-xl lg:text-left">
+            <p className="mb-16 max-w-screen-sm text-center text-base text-gray-500 sm:text-lg md:text-xl lg:text-left lg:text-2xl">
               From easy money management, to financial goals and investments.
               Open your account in a Flash!
             </p>
@@ -25,7 +26,7 @@ const Hero = () => {
                   return (
                     <span
                       key={i}
-                      className="bg-primary -ml-2 size-10 rounded-full ring-4 ring-neutral-200 first:ml-0 sm:size-12"
+                      className="-ml-2 size-10 rounded-full bg-primary ring-4 ring-neutral-200 first:ml-0 sm:size-12"
                     />
                   );
                 })}
