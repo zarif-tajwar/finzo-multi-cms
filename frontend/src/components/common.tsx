@@ -15,8 +15,8 @@ export const SecondHeading = React.forwardRef<
   return (
     <Comp
       className={cn(
-        "text-6xl font-medium text-center max-w-2xl text-wrap",
-        className
+        "max-w-2xl text-wrap text-center text-6xl font-medium",
+        className,
       )}
       ref={ref}
       {...props}
@@ -55,12 +55,12 @@ export const Paragraph = React.forwardRef<HTMLHeadingElement, ParagraphProps>(
     const Comp = asChild ? Slot : "p";
     return (
       <Comp
-        className={cn("text-2xl text-gray-500 max-w-md", className)}
+        className={cn("max-w-md text-2xl text-gray-500", className)}
         ref={ref}
         {...props}
       />
     );
-  }
+  },
 );
 
 Paragraph.displayName = "Paragraph";
@@ -72,7 +72,7 @@ export interface ContainerProps
 }
 
 export const containerVariants = cva(
-  "mx-auto w-full max-w-screen-container px-4 md:px-8"
+  "max-w-screen-container mx-auto w-full px-4 md:px-8",
 );
 
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
@@ -85,7 +85,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 Container.displayName = "Container";

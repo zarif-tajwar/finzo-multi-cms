@@ -5,13 +5,13 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "rounded-full font-bold text-black disabled:opacity-50 text-sm inline-flex justify-center items-center gap-2",
+  "inline-flex items-center justify-center gap-2 rounded-full text-sm font-bold text-black disabled:opacity-50",
   {
     variants: {
       variant: {
         default: "bg-primary",
         dark: "bg-black text-white",
-        outline: "bg-white border-2 border-neutral-100",
+        outline: "border-2 border-neutral-100 bg-white",
         ghost: "",
       },
       size: {
@@ -24,7 +24,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -43,7 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

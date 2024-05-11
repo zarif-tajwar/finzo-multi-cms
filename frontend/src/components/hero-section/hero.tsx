@@ -3,36 +3,36 @@ import HeroVisual from "./hero-visual";
 
 const Hero = () => {
   return (
-    <section className="3xl:min-h-0 3xl:h-[var(--hero-height)] 3xl:max-h-[67.5rem] min-h-[var(--hero-height)] [--hero-height:calc(100svh-var(--nav-height))] flex items-center">
-      <div className="sm:py-10 py-8 md:py-16">
-        <div className="items-center gap-x-8 gap-y-8 grid lg:grid-cols-[1.2fr_1fr]">
+    <section className="3xl:min-h-0 3xl:h-[var(--hero-height)] 3xl:max-h-[67.5rem] flex min-h-[var(--hero-height)] items-center [--hero-height:calc(100svh-var(--nav-height))]">
+      <div className="py-8 sm:py-10 md:py-16">
+        <div className="grid items-center gap-x-8 gap-y-8 lg:grid-cols-[1.2fr_1fr]">
           <HeroVisual />
-          <div className="pt-0 lg:max-w-[32.625rem] flex flex-col items-center lg:block">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl text-balance font-medium mb-6 tracking-tight text-center lg:text-left">
+          <div className="flex flex-col items-center pt-0 lg:block lg:max-w-[32.625rem]">
+            <h1 className="mb-6 text-balance text-center text-5xl font-medium tracking-tight sm:text-6xl md:text-7xl lg:text-left">
               Control your financial future easily
             </h1>
-            <p className="text-lg sm:text-xl text-neutral-500 mb-16 max-w-screen-sm text-center lg:text-left">
+            <p className="mb-16 max-w-screen-sm text-center text-lg text-neutral-500 sm:text-xl lg:text-left">
               From easy money management, to financial goals and investments.
               Open your account in a Flash!
             </p>
-            <div className="sm:flex w-full sm:w-auto sm:flex-row gap-y-2 grid gap-x-5 mb-16 lg:mb-8">
+            <div className="mb-16 grid w-full gap-x-5 gap-y-2 sm:flex sm:w-auto sm:flex-row lg:mb-8">
               <Button>Open Account</Button>
               <Button variant={"outline"}>Generate your card</Button>
             </div>
-            <div className="flex gap-8 flex-col items-center md:flex-row">
+            <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="flex">
                 {[...Array(3).keys()].map((_, i) => {
                   return (
                     <span
                       key={i}
-                      className="bg-primary ring-4 ring-neutral-200 sm:size-12 size-10 rounded-full -ml-2 first:ml-0"
+                      className="bg-primary -ml-2 size-10 rounded-full ring-4 ring-neutral-200 first:ml-0 sm:size-12"
                     />
                   );
                 })}
               </div>
               <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left">
                 <div className="flex items-center gap-x-2">
-                  <span className="inline-flex w-8 h-8 items-center justify-center">
+                  <span className="inline-flex h-8 w-8 items-center justify-center">
                     <svg
                       width="20"
                       height="11"
@@ -46,11 +46,11 @@ const Hero = () => {
                       ></path>
                     </svg>
                   </span>
-                  <p className="text-2xl md:text-3xl font-medium">
+                  <p className="text-2xl font-medium md:text-3xl">
                     15 Million+ Users
                   </p>
                 </div>
-                <p className="text-neutral-500 col-span-2 max-w-96">
+                <p className="col-span-2 max-w-96 text-neutral-500">
                   Trusted by million of satidfied users, our financial services
                   have made a real impact on people’s lives
                 </p>
