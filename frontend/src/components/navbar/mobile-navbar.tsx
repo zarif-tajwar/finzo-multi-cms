@@ -16,19 +16,13 @@ const navLinks = [
 
 const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const buttonRef = useRef(null);
-  const ref = useClickOutside(
-    () => setIsMenuOpen(false),
-    ["mousedown"],
-    [buttonRef.current]
-  );
+  const ref = useClickOutside(() => setIsMenuOpen(false), ["mousedown"]);
 
   return (
-    <div className="h-full lg:hidden flex items-center">
-      <div className="flex relative w-full items-center justify-between">
+    <div className="flex h-full items-center lg:hidden">
+      <div className="relative flex w-full items-center justify-between">
         <Logo className="" />
         <Button
-          ref={buttonRef}
           size={"icon"}
           onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
           variant={isMenuOpen ? "outline" : "ghost"}
@@ -39,7 +33,7 @@ const MobileNavbar = () => {
         {isMenuOpen && (
           <div
             ref={ref}
-            className="absolute z-50 top-full translate-y-1 bg-white/70 backdrop-blur-sm pt-4 pb-6 px-3 w-full sm:max-w-xs right-0 border-2 border-neutral-100 rounded-2xl"
+            className="absolute right-0 top-full z-50 w-full translate-y-1 rounded-2xl border-2 border-neutral-100 bg-white/70 px-3 pb-6 pt-4 backdrop-blur-sm sm:max-w-xs"
           >
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => {
@@ -47,7 +41,7 @@ const MobileNavbar = () => {
                   <li key={link.text}>
                     <a
                       href="#"
-                      className="text-sm font-bold px-5 py-1 inline-block"
+                      className="inline-block px-5 py-1 text-sm font-bold"
                     >
                       {link.text}
                     </a>
@@ -55,8 +49,8 @@ const MobileNavbar = () => {
                 );
               })}
             </ul>
-            <div className="h-px w-full bg-neutral-100 mt-4 mb-6"></div>
-            <div className="flex gap-2 flex-col">
+            <div className="mb-6 mt-4 h-px w-full bg-neutral-100"></div>
+            <div className="flex flex-col gap-2">
               <Button variant={"outline"}>Login</Button>
               <Button variant={"dark"}>Open Account</Button>
             </div>
