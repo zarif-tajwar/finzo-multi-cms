@@ -22,6 +22,10 @@ const config: Config = {
       borderRadius: {
         "4xl": "2rem",
       },
+      spacing: {
+        "18": "4.5rem",
+        "105": "26.25rem",
+      },
     },
   },
   plugins: [],
