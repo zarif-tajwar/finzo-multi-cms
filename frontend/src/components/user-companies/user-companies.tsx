@@ -48,7 +48,7 @@ const UserCompanies = () => {
           their money
         </Paragraph>
       </div>
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
         {companies.map((company) => {
           return (
             <div
