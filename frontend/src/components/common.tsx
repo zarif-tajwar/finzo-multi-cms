@@ -15,7 +15,7 @@ export const SecondHeading = React.forwardRef<
   return (
     <Comp
       className={cn(
-        "mx-auto mb-9 max-w-2xl text-balance text-center text-4xl font-bold sm:text-5xl sm:font-medium md:text-6xl",
+        "mx-auto mb-9 max-w-3xl text-center text-4xl font-bold sm:text-5xl sm:font-medium md:text-6xl",
         className,
       )}
       ref={ref}
@@ -38,7 +38,7 @@ export const ThirdHeading = React.forwardRef<
   return (
     <Comp
       className={cn(
-        "text-balance text-2xl font-bold  sm:text-3xl md:text-4xl md:font-medium",
+        "text-2xl font-bold sm:text-3xl md:text-4xl md:font-medium",
         className,
       )}
       ref={ref}
