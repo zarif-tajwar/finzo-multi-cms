@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../button";
 import { Logo } from "../icons";
 
@@ -11,15 +12,15 @@ const navLinks = [
 
 const DesktopNavbar = () => {
   return (
-    <div className="hidden h-full lg:flex flex-row items-center lg:justify-between">
+    <div className="hidden h-full flex-row items-center lg:flex lg:justify-between">
       <Logo className="hidden lg:inline-block" />
-      <ul className="hidden lg:flex  items-center justify-between">
+      <ul className="hidden items-center  justify-between lg:flex">
         {navLinks.map((link) => {
           return (
             <li key={link.text}>
-              <a href="#" className="text-sm font-bold px-4 py-2.5">
+              <Link href="#" className="px-4 py-2.5 text-sm font-bold">
                 {link.text}
-              </a>
+              </Link>
             </li>
           );
         })}

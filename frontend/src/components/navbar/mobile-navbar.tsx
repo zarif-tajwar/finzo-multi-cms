@@ -1,10 +1,11 @@
 "use client";
 
-import { Logo } from "../icons";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useRef, useState } from "react";
-import { Button } from "../button";
 import { useClickOutside } from "@mantine/hooks";
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "../button";
+import { Logo } from "../icons";
 
 const navLinks = [
   { text: "Products" },
@@ -33,18 +34,18 @@ const MobileNavbar = () => {
         {isMenuOpen && (
           <div
             ref={ref}
-            className="absolute right-0 top-full z-50 w-full translate-y-1 rounded-2xl border-2 border-neutral-100 bg-white/70 px-3 pb-6 pt-4 backdrop-blur-sm sm:max-w-xs"
+            className="absolute right-0 top-full z-50 w-full translate-y-1 rounded-2xl border-2 border-neutral-100 bg-white/95 px-3 pb-6 pt-4 backdrop-blur-md sm:max-w-xs"
           >
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => {
                 return (
                   <li key={link.text}>
-                    <a
+                    <Link
                       href="#"
                       className="inline-block px-5 py-1 text-sm font-bold"
                     >
                       {link.text}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
