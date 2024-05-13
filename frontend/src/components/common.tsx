@@ -59,7 +59,7 @@ export const Paragraph = React.forwardRef<HTMLHeadingElement, ParagraphProps>(
     return (
       <Comp
         className={cn(
-          "text-base text-gray-500 sm:text-lg md:text-xl lg:text-2xl",
+          "text-lg text-gray-500 md:text-xl lg:text-2xl",
           className,
         )}
         ref={ref}

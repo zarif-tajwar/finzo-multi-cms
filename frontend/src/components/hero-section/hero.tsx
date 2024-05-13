@@ -12,10 +12,10 @@ const Hero = () => {
             <h1 className="mb-6 text-balance text-center text-5xl font-bold tracking-tight sm:text-6xl sm:font-medium md:text-7xl lg:text-left xl:text-8xl">
               Control your financial future easily
             </h1>
-            <p className="mb-16 max-w-screen-sm text-center text-base text-gray-500 sm:text-lg md:text-xl lg:text-left lg:text-2xl">
+            <Paragraph className="mb-16 max-w-screen-sm text-center text-gray-500 md:text-xl lg:text-left lg:text-2xl">
               From easy money management, to financial goals and investments.
               Open your account in a Flash!
-            </p>
+            </Paragraph>
             <div className="mb-16 grid w-full gap-x-5 gap-y-2 sm:flex sm:w-auto sm:flex-row lg:mb-8">
               <Button>Open Account</Button>
               <Button variant={"outline"}>Generate your card</Button>
@@ -52,7 +52,7 @@ const Hero = () => {
                   </p>
                 </div>
                 <p className="col-span-2 max-w-96 text-neutral-500">
-                  Trusted by million of satidfied users, our financial services
+                  Trusted by million of satisfied users, our financial services
                   have made a real impact on people’s lives
                 </p>
               </div>
