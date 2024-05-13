@@ -5,7 +5,7 @@ import { useClickOutside } from "@mantine/hooks";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../button";
-import { Logo } from "../icons";
+import { GithubIcon, Logo } from "../icons";
 
 const navLinks = [
   { text: "Products" },
@@ -53,7 +53,11 @@ const MobileNavbar = () => {
             <div className="mb-6 mt-4 h-px w-full bg-neutral-100"></div>
             <div className="flex flex-col gap-2">
               <Button variant={"outline"}>Login</Button>
-              <Button variant={"dark"}>Open Account</Button>
+              <Button variant={"dark"} asChild>
+                <Link href={"https://github.com/zarif-tajwar/finzo-next-cms"}>
+                  <GithubIcon className="size-5" /> Github
+                </Link>
+              </Button>
             </div>
           </div>
         )}

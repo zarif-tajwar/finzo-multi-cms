@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "../button";
-import { Logo } from "../icons";
+import { GithubIcon, Logo } from "../icons";
 
 const navLinks = [
   { text: "Products" },
@@ -27,7 +27,11 @@ const DesktopNavbar = () => {
       </ul>
       <div className="flex gap-4">
         <Button variant={"ghost"}>Login</Button>
-        <Button variant={"dark"}>Open Account</Button>
+        <Button variant={"dark"} asChild>
+          <Link href={"https://github.com/zarif-tajwar/finzo-next-cms"}>
+            <GithubIcon className="size-5" /> Github
+          </Link>
+        </Button>
       </div>
     </div>
   );
