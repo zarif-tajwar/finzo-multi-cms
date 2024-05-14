@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "total_user_company_counts",
+  "info": {
+    "singularName": "total-user-company-count",
+    "pluralName": "total-user-company-counts",
+    "displayName": "totalUserCompanyCount"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "count": {
+      "type": "integer"
+    }
+  }
+}

@@ -401,6 +401,68 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
 }
 
+export interface ApiTotalUserCompanyCountTotalUserCompanyCount
+  extends Schema.SingleType {
+  collectionName: 'total_user_company_counts';
+  info: {
+    singularName: 'total-user-company-count';
+    pluralName: 'total-user-company-counts';
+    displayName: 'totalUserCompanyCount';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    count: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::total-user-company-count.total-user-company-count',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::total-user-company-count.total-user-company-count',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTotalUserInMillionsTotalUserInMillions
+  extends Schema.SingleType {
+  collectionName: 'total_users_in_millions';
+  info: {
+    singularName: 'total-user-in-millions';
+    pluralName: 'total-users-in-millions';
+    displayName: 'TotalUsersInMillions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    count: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::total-user-in-millions.total-user-in-millions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::total-user-in-millions.total-user-in-millions',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -838,6 +900,8 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::total-user-company-count.total-user-company-count': ApiTotalUserCompanyCountTotalUserCompanyCount;
+      'api::total-user-in-millions.total-user-in-millions': ApiTotalUserInMillionsTotalUserInMillions;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
