@@ -6,35 +6,13 @@ import { useState } from "react";
 import { Button } from "../button";
 import { Paragraph, SecondHeading, Section } from "../common";
 import { Arrow } from "../icons";
+import { TestimonialClientData } from "@/lib/validation/testimonial";
 
-const testimonials = [
-  {
-    image: "/images/testimonials/testifier1.png",
-    name: "Mark Smith",
-    profession: "Entrepreneur",
-    testimony: `This app is a game changer!  Since using it, I've gotten a much better handle on my business finances. Budgeting is a breeze, and the investment insights have been super helpful.`,
-  },
-  {
-    image: "/images/testimonials/testifier2.png",
-    name: "David Leacher",
-    profession: "Teacher",
-    testimony: `As a teacher, my budget is always tight. This app helps me stay on top of my spending and find ways to save. I love the easy bill pay feature, too!`,
-  },
-  {
-    image: "/images/testimonials/testifier3.png",
-    name: "Michael Burge",
-    profession: "Freelancer",
-    testimony: `Freelancing can be unpredictable financially. This app has been a lifesaver. It helps me track income and expenses effortlessly, and the tax tools are amazing.`,
-  },
-  {
-    image: "/images/testimonials/testifier4.png",
-    name: "Daniel Miles",
-    profession: "Student",
-    testimony: `Juggling school and part-time work can be stressful. This app keeps me on track with my finances. It helps me budget for textbooks and living expenses, leaving some extra for fun stuff, too!`,
-  },
-];
-
-const TestimonialsClient = () => {
+const TestimonialsClient = ({
+  testimonials,
+}: {
+  testimonials: TestimonialClientData[];
+}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <Section>
@@ -55,10 +33,15 @@ const TestimonialsClient = () => {
                   <div className="relative h-64 w-full md:h-full">
                     <div className="absolute bottom-0 h-full w-full md:h-96 lg:h-[32rem]">
                       <Image
-                        src={data.image}
-                        alt={`Picture of testifier ${data.name}`}
-                        fill
-                        className="object-scale-down object-bottom"
+                        src={data.image.url}
+                        alt={
+                          data.image.alt
+                            ? data.image.alt
+                            : `Picture of testifier ${data.name}`
+                        }
+                        width={data.image.width}
+                        height={data.image.height}
+                        className="h-full w-full object-scale-down object-bottom"
                       />
                     </div>
                   </div>
