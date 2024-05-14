@@ -1,4 +1,4 @@
-import { SvgIconProps } from "@/lib/types";
+import { SvgIconProps } from "@/lib/types/common";
 import { cn } from "@/lib/utils";
 
 export const ArrowLong = ({ ...props }: SvgIconProps) => {
