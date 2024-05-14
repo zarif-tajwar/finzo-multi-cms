@@ -1,6 +1,13 @@
+import Image from "next/image";
 import { Button } from "../button";
 import { Paragraph } from "../common";
 import HeroVisual from "./hero-visual";
+
+const avatars = [
+  { loc: "/images/hero/avatar1.png", bg: "bg-orange-200" },
+  { loc: "/images/hero/avatar2.png", bg: "bg-violet-200" },
+  { loc: "/images/hero/avatar3.png", bg: "bg-emerald-200" },
+];
 
 const Hero = () => {
   return (
@@ -22,12 +29,19 @@ const Hero = () => {
             </div>
             <div className="flex flex-col items-center gap-8 md:flex-row">
               <div className="flex">
-                {[...Array(3).keys()].map((_, i) => {
+                {avatars.map((avatar, i) => {
                   return (
-                    <span
+                    <div
                       key={i}
-                      className="-ml-2 size-10 rounded-full bg-primary ring-4 ring-neutral-200 first:ml-0 sm:size-12"
-                    />
+                      className={`relative -ml-2 size-10 overflow-clip rounded-full first:ml-0 sm:size-12 ${avatar.bg}`}
+                    >
+                      <Image
+                        src={avatar.loc}
+                        fill
+                        className="h-full w-full object-cover"
+                        alt={`Avatar ${i}`}
+                      />
+                    </div>
                   );
                 })}
               </div>
