@@ -1,5 +1,8 @@
+import { strapiClient } from "@/lib/strapi-client";
 import Image from "next/image";
+import { z } from "zod";
 import { Paragraph, SecondHeading, Section } from "../common";
+import { getTotalUserCompanies } from "@/lib/server";
 
 const companies = [
   {
@@ -36,12 +39,14 @@ const companies = [
   },
 ];
 
-const UserCompanies = () => {
+const UserCompanies = async () => {
+  const totalUserCompanies = await getTotalUserCompanies();
+  if (totalUserCompanies === undefined) return null;
   return (
     <Section>
       <div className="flex flex-col items-center">
         <SecondHeading>
-          200+ The fastest growing company use Finzo
+          {`${totalUserCompanies}+ The fastest growing company use Finzo`}
         </SecondHeading>
         <Paragraph className="mb-9 max-w-sm text-center lg:max-w-md">
           Many companies have tried using Finzo and they trust the safety of

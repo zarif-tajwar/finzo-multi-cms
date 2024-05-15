@@ -14,6 +14,16 @@ export interface paths {
     put: operations["put/testimonials/{id}"];
     delete: operations["delete/testimonials/{id}"];
   };
+  "/total-user-company-count": {
+    get: operations["get/total-user-company-count"];
+    put: operations["put/total-user-company-count"];
+    delete: operations["delete/total-user-company-count"];
+  };
+  "/total-user-in-millions": {
+    get: operations["get/total-user-in-millions"];
+    put: operations["put/total-user-in-millions"];
+    delete: operations["delete/total-user-in-millions"];
+  };
   "/upload": {
     /** @description Upload files */
     post: {
@@ -1022,6 +1032,290 @@ export interface components {
       data?: components["schemas"]["TestimonialResponseDataObject"];
       meta?: Record<string, never>;
     };
+    TotalUserCompanyCountRequest: {
+      data: {
+        count?: number;
+      };
+    };
+    TotalUserCompanyCountListResponseDataItem: {
+      id?: number;
+      attributes?: components["schemas"]["TotalUserCompanyCount"];
+    };
+    TotalUserCompanyCountListResponse: {
+      data?: components["schemas"]["TotalUserCompanyCountListResponseDataItem"][];
+      meta?: {
+        pagination?: {
+          page?: number;
+          pageSize?: number;
+          pageCount?: number;
+          total?: number;
+        };
+      };
+    };
+    TotalUserCompanyCount: {
+      count?: number;
+      /** Format: date-time */
+      createdAt?: string;
+      /** Format: date-time */
+      updatedAt?: string;
+      /** Format: date-time */
+      publishedAt?: string;
+      createdBy?: {
+        data?: {
+          id?: number;
+          attributes?: {
+            firstname?: string;
+            lastname?: string;
+            username?: string;
+            /** Format: email */
+            email?: string;
+            resetPasswordToken?: string;
+            registrationToken?: string;
+            isActive?: boolean;
+            roles?: {
+              data?: {
+                  id?: number;
+                  attributes?: {
+                    name?: string;
+                    code?: string;
+                    description?: string;
+                    users?: {
+                      data?: {
+                          id?: number;
+                          attributes?: Record<string, never>;
+                        }[];
+                    };
+                    permissions?: {
+                      data?: {
+                          id?: number;
+                          attributes?: {
+                            action?: string;
+                            actionParameters?: unknown;
+                            subject?: string;
+                            properties?: unknown;
+                            conditions?: unknown;
+                            role?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                            /** Format: date-time */
+                            createdAt?: string;
+                            /** Format: date-time */
+                            updatedAt?: string;
+                            createdBy?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                            updatedBy?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                          };
+                        }[];
+                    };
+                    /** Format: date-time */
+                    createdAt?: string;
+                    /** Format: date-time */
+                    updatedAt?: string;
+                    createdBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: Record<string, never>;
+                      };
+                    };
+                    updatedBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: Record<string, never>;
+                      };
+                    };
+                  };
+                }[];
+            };
+            blocked?: boolean;
+            preferedLanguage?: string;
+            /** Format: date-time */
+            createdAt?: string;
+            /** Format: date-time */
+            updatedAt?: string;
+            createdBy?: {
+              data?: {
+                id?: number;
+                attributes?: Record<string, never>;
+              };
+            };
+            updatedBy?: {
+              data?: {
+                id?: number;
+                attributes?: Record<string, never>;
+              };
+            };
+          };
+        };
+      };
+      updatedBy?: {
+        data?: {
+          id?: number;
+          attributes?: Record<string, never>;
+        };
+      };
+    };
+    TotalUserCompanyCountResponseDataObject: {
+      id?: number;
+      attributes?: components["schemas"]["TotalUserCompanyCount"];
+    };
+    TotalUserCompanyCountResponse: {
+      data?: components["schemas"]["TotalUserCompanyCountResponseDataObject"];
+      meta?: Record<string, never>;
+    };
+    TotalUserInMillionsRequest: {
+      data: {
+        count?: number;
+      };
+    };
+    TotalUserInMillionsListResponseDataItem: {
+      id?: number;
+      attributes?: components["schemas"]["TotalUserInMillions"];
+    };
+    TotalUserInMillionsListResponse: {
+      data?: components["schemas"]["TotalUserInMillionsListResponseDataItem"][];
+      meta?: {
+        pagination?: {
+          page?: number;
+          pageSize?: number;
+          pageCount?: number;
+          total?: number;
+        };
+      };
+    };
+    TotalUserInMillions: {
+      count?: number;
+      /** Format: date-time */
+      createdAt?: string;
+      /** Format: date-time */
+      updatedAt?: string;
+      /** Format: date-time */
+      publishedAt?: string;
+      createdBy?: {
+        data?: {
+          id?: number;
+          attributes?: {
+            firstname?: string;
+            lastname?: string;
+            username?: string;
+            /** Format: email */
+            email?: string;
+            resetPasswordToken?: string;
+            registrationToken?: string;
+            isActive?: boolean;
+            roles?: {
+              data?: {
+                  id?: number;
+                  attributes?: {
+                    name?: string;
+                    code?: string;
+                    description?: string;
+                    users?: {
+                      data?: {
+                          id?: number;
+                          attributes?: Record<string, never>;
+                        }[];
+                    };
+                    permissions?: {
+                      data?: {
+                          id?: number;
+                          attributes?: {
+                            action?: string;
+                            actionParameters?: unknown;
+                            subject?: string;
+                            properties?: unknown;
+                            conditions?: unknown;
+                            role?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                            /** Format: date-time */
+                            createdAt?: string;
+                            /** Format: date-time */
+                            updatedAt?: string;
+                            createdBy?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                            updatedBy?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                          };
+                        }[];
+                    };
+                    /** Format: date-time */
+                    createdAt?: string;
+                    /** Format: date-time */
+                    updatedAt?: string;
+                    createdBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: Record<string, never>;
+                      };
+                    };
+                    updatedBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: Record<string, never>;
+                      };
+                    };
+                  };
+                }[];
+            };
+            blocked?: boolean;
+            preferedLanguage?: string;
+            /** Format: date-time */
+            createdAt?: string;
+            /** Format: date-time */
+            updatedAt?: string;
+            createdBy?: {
+              data?: {
+                id?: number;
+                attributes?: Record<string, never>;
+              };
+            };
+            updatedBy?: {
+              data?: {
+                id?: number;
+                attributes?: Record<string, never>;
+              };
+            };
+          };
+        };
+      };
+      updatedBy?: {
+        data?: {
+          id?: number;
+          attributes?: Record<string, never>;
+        };
+      };
+    };
+    TotalUserInMillionsResponseDataObject: {
+      id?: number;
+      attributes?: components["schemas"]["TotalUserInMillions"];
+    };
+    TotalUserInMillionsResponse: {
+      data?: components["schemas"]["TotalUserInMillionsResponseDataObject"];
+      meta?: Record<string, never>;
+    };
     UploadFile: {
       id?: number;
       name?: string;
@@ -1350,6 +1644,304 @@ export interface operations {
         id: number;
       };
     };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": number;
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "get/total-user-company-count": {
+    parameters: {
+      query?: {
+        /** @description Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** @description Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** @description Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** @description Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** @description Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** @description Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** @description Fields to return (ex: title,author) */
+        fields?: string;
+        /** @description Relations to return */
+        populate?: string;
+        /** @description Filters to apply */
+        filters?: Record<string, never>;
+        /** @description Locale to apply */
+        locale?: string;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["TotalUserCompanyCountResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "put/total-user-company-count": {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["TotalUserCompanyCountRequest"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["TotalUserCompanyCountResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "delete/total-user-company-count": {
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": number;
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "get/total-user-in-millions": {
+    parameters: {
+      query?: {
+        /** @description Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** @description Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** @description Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** @description Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** @description Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** @description Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** @description Fields to return (ex: title,author) */
+        fields?: string;
+        /** @description Relations to return */
+        populate?: string;
+        /** @description Filters to apply */
+        filters?: Record<string, never>;
+        /** @description Locale to apply */
+        locale?: string;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["TotalUserInMillionsResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "put/total-user-in-millions": {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["TotalUserInMillionsRequest"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["TotalUserInMillionsResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "delete/total-user-in-millions": {
     responses: {
       /** @description OK */
       200: {

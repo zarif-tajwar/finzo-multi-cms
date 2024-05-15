@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "../button";
 import { Paragraph } from "../common";
 import HeroVisual from "./hero-visual";
+import { getTotalUsersInMillions } from "@/lib/server";
 
 const avatars = [
   { loc: "/images/hero/avatar1.png", bg: "bg-orange-200" },
@@ -9,7 +10,8 @@ const avatars = [
   { loc: "/images/hero/avatar3.png", bg: "bg-emerald-200" },
 ];
 
-const Hero = () => {
+const Hero = async () => {
+  const totalUsersInMillions = (await getTotalUsersInMillions()) || 15;
   return (
     <section className="3xl:min-h-0 3xl:h-[var(--hero-height)] 3xl:max-h-[67.5rem] flex min-h-[var(--hero-height)] items-center [--hero-height:calc(100svh-var(--nav-height))]">
       <div className="py-8 sm:py-10 md:py-16">
@@ -62,7 +64,7 @@ const Hero = () => {
                     </svg>
                   </span>
                   <p className="text-2xl font-medium md:text-3xl">
-                    15 Million+ Users
+                    `${totalUsersInMillions} Million+ Users`
                   </p>
                 </div>
                 <p className="col-span-2 max-w-96 text-neutral-500">

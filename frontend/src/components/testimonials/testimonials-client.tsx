@@ -10,15 +10,17 @@ import { TestimonialClientData } from "@/lib/validation/testimonial";
 
 const TestimonialsClient = ({
   testimonials,
+  totalUsersInMillions,
 }: {
   testimonials: TestimonialClientData[];
+  totalUsersInMillions: number;
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <Section>
       <div className="grid-cols-2 lg:grid">
         <SecondHeading className="col-start-2 col-end-2 max-w-[45rem] text-wrap lg:mx-0 lg:text-left">
-          Join 15+ million people who already trust us with their money
+          {`Join ${totalUsersInMillions}+ million people who already trust us with their money`}
         </SecondHeading>
       </div>
       <div className="relative [--padding:2rem] md:[--padding:3rem] lg:[--padding:4rem]">
