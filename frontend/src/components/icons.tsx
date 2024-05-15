@@ -47,6 +47,95 @@ export const XIcon = ({ ...props }: SvgIconProps) => {
     </svg>
   );
 };
+export const CheckIcon = ({ ...props }: SvgIconProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M20 6L9 17l-5-5"
+      ></path>
+    </svg>
+  );
+};
+export const SpinnerIcon = ({ ...props }: SvgIconProps) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12 2V6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 18V22"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.92999 4.93018L7.75999 7.76018"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.24 16.2402L19.07 19.0702"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2 12H6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18 12H22"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.92999 19.0702L7.75999 16.2402"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.24 7.76018L19.07 4.93018"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 export const LinkedinIcon = ({ ...props }: SvgIconProps) => {
   return (
     <svg

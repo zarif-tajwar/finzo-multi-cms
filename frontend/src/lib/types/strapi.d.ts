@@ -5,6 +5,15 @@
 
 
 export interface paths {
+  "/newsletter-subscribed-emails": {
+    get: operations["get/newsletter-subscribed-emails"];
+    post: operations["post/newsletter-subscribed-emails"];
+  };
+  "/newsletter-subscribed-emails/{id}": {
+    get: operations["get/newsletter-subscribed-emails/{id}"];
+    put: operations["put/newsletter-subscribed-emails/{id}"];
+    delete: operations["delete/newsletter-subscribed-emails/{id}"];
+  };
   "/testimonials": {
     get: operations["get/testimonials"];
     post: operations["post/testimonials"];
@@ -748,6 +757,150 @@ export interface components {
         details?: Record<string, never>;
       };
     };
+    NewsletterSubscribedEmailRequest: {
+      data: {
+        /** Format: email */
+        email: string;
+      };
+    };
+    NewsletterSubscribedEmailListResponseDataItem: {
+      id?: number;
+      attributes?: components["schemas"]["NewsletterSubscribedEmail"];
+    };
+    NewsletterSubscribedEmailListResponse: {
+      data?: components["schemas"]["NewsletterSubscribedEmailListResponseDataItem"][];
+      meta?: {
+        pagination?: {
+          page?: number;
+          pageSize?: number;
+          pageCount?: number;
+          total?: number;
+        };
+      };
+    };
+    NewsletterSubscribedEmail: {
+      /** Format: email */
+      email: string;
+      /** Format: date-time */
+      createdAt?: string;
+      /** Format: date-time */
+      updatedAt?: string;
+      /** Format: date-time */
+      publishedAt?: string;
+      createdBy?: {
+        data?: {
+          id?: number;
+          attributes?: {
+            firstname?: string;
+            lastname?: string;
+            username?: string;
+            /** Format: email */
+            email?: string;
+            resetPasswordToken?: string;
+            registrationToken?: string;
+            isActive?: boolean;
+            roles?: {
+              data?: {
+                  id?: number;
+                  attributes?: {
+                    name?: string;
+                    code?: string;
+                    description?: string;
+                    users?: {
+                      data?: {
+                          id?: number;
+                          attributes?: Record<string, never>;
+                        }[];
+                    };
+                    permissions?: {
+                      data?: {
+                          id?: number;
+                          attributes?: {
+                            action?: string;
+                            actionParameters?: unknown;
+                            subject?: string;
+                            properties?: unknown;
+                            conditions?: unknown;
+                            role?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                            /** Format: date-time */
+                            createdAt?: string;
+                            /** Format: date-time */
+                            updatedAt?: string;
+                            createdBy?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                            updatedBy?: {
+                              data?: {
+                                id?: number;
+                                attributes?: Record<string, never>;
+                              };
+                            };
+                          };
+                        }[];
+                    };
+                    /** Format: date-time */
+                    createdAt?: string;
+                    /** Format: date-time */
+                    updatedAt?: string;
+                    createdBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: Record<string, never>;
+                      };
+                    };
+                    updatedBy?: {
+                      data?: {
+                        id?: number;
+                        attributes?: Record<string, never>;
+                      };
+                    };
+                  };
+                }[];
+            };
+            blocked?: boolean;
+            preferedLanguage?: string;
+            /** Format: date-time */
+            createdAt?: string;
+            /** Format: date-time */
+            updatedAt?: string;
+            createdBy?: {
+              data?: {
+                id?: number;
+                attributes?: Record<string, never>;
+              };
+            };
+            updatedBy?: {
+              data?: {
+                id?: number;
+                attributes?: Record<string, never>;
+              };
+            };
+          };
+        };
+      };
+      updatedBy?: {
+        data?: {
+          id?: number;
+          attributes?: Record<string, never>;
+        };
+      };
+    };
+    NewsletterSubscribedEmailResponseDataObject: {
+      id?: number;
+      attributes?: components["schemas"]["NewsletterSubscribedEmail"];
+    };
+    NewsletterSubscribedEmailResponse: {
+      data?: components["schemas"]["NewsletterSubscribedEmailResponseDataObject"];
+      meta?: Record<string, never>;
+    };
     TestimonialRequest: {
       data: {
         name: string;
@@ -1434,6 +1587,255 @@ export type external = Record<string, never>;
 
 export interface operations {
 
+  "get/newsletter-subscribed-emails": {
+    parameters: {
+      query?: {
+        /** @description Sort by attributes ascending (asc) or descending (desc) */
+        sort?: string;
+        /** @description Return page/pageSize (default: true) */
+        "pagination[withCount]"?: boolean;
+        /** @description Page number (default: 0) */
+        "pagination[page]"?: number;
+        /** @description Page size (default: 25) */
+        "pagination[pageSize]"?: number;
+        /** @description Offset value (default: 0) */
+        "pagination[start]"?: number;
+        /** @description Number of entities to return (default: 25) */
+        "pagination[limit]"?: number;
+        /** @description Fields to return (ex: title,author) */
+        fields?: string;
+        /** @description Relations to return */
+        populate?: string;
+        /** @description Filters to apply */
+        filters?: Record<string, never>;
+        /** @description Locale to apply */
+        locale?: string;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["NewsletterSubscribedEmailListResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "post/newsletter-subscribed-emails": {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["NewsletterSubscribedEmailRequest"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["NewsletterSubscribedEmailResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "get/newsletter-subscribed-emails/{id}": {
+    parameters: {
+      path: {
+        id: number;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["NewsletterSubscribedEmailResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "put/newsletter-subscribed-emails/{id}": {
+    parameters: {
+      path: {
+        id: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["NewsletterSubscribedEmailRequest"];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["NewsletterSubscribedEmailResponse"];
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
+  "delete/newsletter-subscribed-emails/{id}": {
+    parameters: {
+      path: {
+        id: number;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          "application/json": number;
+        };
+      };
+      /** @description Bad Request */
+      400: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Unauthorized */
+      401: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Forbidden */
+      403: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Not Found */
+      404: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+      /** @description Internal Server Error */
+      500: {
+        content: {
+          "application/json": components["schemas"]["Error"];
+        };
+      };
+    };
+  };
   "get/testimonials": {
     parameters: {
       query?: {
