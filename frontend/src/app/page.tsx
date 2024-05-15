@@ -5,7 +5,7 @@ import Hero from "@/components/hero-section/hero";
 import Testimonials from "@/components/testimonials/testimonials";
 import UserCompanies from "@/components/user-companies/user-companies";
 
-export const revalidate = 300;
+export const revalidate = 86400;
 
 export default function Home() {
   return (
