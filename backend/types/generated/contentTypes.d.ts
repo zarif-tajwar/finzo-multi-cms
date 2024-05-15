@@ -362,6 +362,37 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiNewsletterSubscribedEmailNewsletterSubscribedEmail
+  extends Schema.CollectionType {
+  collectionName: 'newsletter_subscribed_emails';
+  info: {
+    singularName: 'newsletter-subscribed-email';
+    pluralName: 'newsletter-subscribed-emails';
+    displayName: 'Newsletter Subscribed Email';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter-subscribed-email.newsletter-subscribed-email',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsletter-subscribed-email.newsletter-subscribed-email',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   collectionName: 'testimonials';
   info: {
@@ -899,6 +930,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::newsletter-subscribed-email.newsletter-subscribed-email': ApiNewsletterSubscribedEmailNewsletterSubscribedEmail;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::total-user-company-count.total-user-company-count': ApiTotalUserCompanyCountTotalUserCompanyCount;
       'api::total-user-in-millions.total-user-in-millions': ApiTotalUserInMillionsTotalUserInMillions;

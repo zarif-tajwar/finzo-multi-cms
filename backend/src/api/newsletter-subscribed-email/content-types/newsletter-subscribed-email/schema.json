@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_subscribed_emails",
+  "info": {
+    "singularName": "newsletter-subscribed-email",
+    "pluralName": "newsletter-subscribed-emails",
+    "displayName": "Newsletter Subscribed Email"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    }
+  }
+}
