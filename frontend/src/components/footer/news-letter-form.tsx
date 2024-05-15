@@ -15,6 +15,7 @@ const NewsLetterForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError("");
     setIsLoading(true);
 
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
