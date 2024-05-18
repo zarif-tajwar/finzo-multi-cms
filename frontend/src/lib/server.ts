@@ -1,27 +1,42 @@
+import {
+  EntryFieldTypes
+} from "contentful";
+import { cache } from "react";
 import "server-only";
+import { z } from "zod";
+import { contentfulClient } from "./contentful/client";
 import { strapiClient } from "./strapi-client";
 import { TestimonialsSchema } from "./validation/testimonial";
-import { cache } from "react";
-import { z } from "zod";
+
+type TestimonialSkeleton = {
+  contentTypeId: "testimonial";
+  fields: {
+    name: EntryFieldTypes.Text;
+    profession: EntryFieldTypes.Text;
+    testimony: EntryFieldTypes.Text;
+    image: EntryFieldTypes.AssetLink;
+  };
+};
+
 
 export const getTestimonials = async () => {
-  const fetchedData = await strapiClient
-    .GET("/testimonials", {
-      params: { query: { populate: "image", sort: "sortOrder:desc" } },
-    })
-    .then((res) =>
-      res.data?.data?.map((obj) => ({
-        name: obj.attributes?.name,
-        testimony: obj.attributes?.testimony,
-        profession: obj.attributes?.profession,
-        image: {
-          url: obj.attributes?.image.data?.attributes?.url,
-          width: obj.attributes?.image.data?.attributes?.width,
-          height: obj.attributes?.image.data?.attributes?.height,
-          alt: obj.attributes?.image.data?.attributes?.alternativeText,
-        },
-      })),
-    );
+  const data = await contentfulClient.withoutUnresolvableLinks.getEntries<TestimonialSkeleton>({
+    content_type: "testimonial",
+  });
+  const fetchedData = data.items.map((obj) => {
+    const imageField = obj.fields.image?.fields
+    return {
+      ...obj.fields,
+      image: {
+        url: "https:" + imageField?.file?.url,
+        alt: imageField?.description,
+        width: imageField?.file?.details
+          .image?.width,
+        height: imageField?.file?.details
+          .image?.height,
+      },
+    }
+  });
   const parseData = TestimonialsSchema.safeParse(fetchedData);
   if (!parseData.success) return;
   return parseData.data;
