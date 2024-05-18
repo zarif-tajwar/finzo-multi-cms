@@ -1,43 +1,7 @@
-import { strapiClient } from "@/lib/strapi-client";
-import Image from "next/image";
-import { z } from "zod";
-import { Paragraph, SecondHeading, Section } from "../common";
 import { getTotalUserCompanies } from "@/lib/server";
-
-const companies = [
-  {
-    loc: "/images/companies/airtable-logo.png",
-    company: "Airtable",
-  },
-  {
-    loc: "/images/companies/discord-logo.png",
-    company: "Discord",
-  },
-  {
-    loc: "/images/companies/dropbox-logo.png",
-    company: "Dropbox",
-  },
-  {
-    loc: "/images/companies/monday-logo.png",
-    company: "Monday",
-  },
-  {
-    loc: "/images/companies/pinterest-logo.png",
-    company: "Pinterest",
-  },
-  {
-    loc: "/images/companies/slack-logo.png",
-    company: "Slack",
-  },
-  {
-    loc: "/images/companies/stripe-logo.png",
-    company: "Stripe",
-  },
-  {
-    loc: "/images/companies/zoom-logo.png",
-    company: "Zoom",
-  },
-];
+import Image from "next/image";
+import { Paragraph, SecondHeading, Section } from "../common";
+import { companies } from "@/lib/static-data";
 
 const UserCompanies = async () => {
   const totalUserCompanies = await getTotalUserCompanies();

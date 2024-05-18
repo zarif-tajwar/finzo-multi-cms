@@ -24,3 +24,38 @@ export const testimonials = [
     testimony: `Juggling school and part-time work can be stressful. This app keeps me on track with my finances. It helps me budget for textbooks and living expenses, leaving some extra for fun stuff, too!`,
   },
 ];
+
+export const companies = [
+  {
+    loc: "/images/companies/airtable-logo.png",
+    company: "Airtable",
+  },
+  {
+    loc: "/images/companies/discord-logo.png",
+    company: "Discord",
+  },
+  {
+    loc: "/images/companies/dropbox-logo.png",
+    company: "Dropbox",
+  },
+  {
+    loc: "/images/companies/monday-logo.png",
+    company: "Monday",
+  },
+  {
+    loc: "/images/companies/pinterest-logo.png",
+    company: "Pinterest",
+  },
+  {
+    loc: "/images/companies/slack-logo.png",
+    company: "Slack",
+  },
+  {
+    loc: "/images/companies/stripe-logo.png",
+    company: "Stripe",
+  },
+  {
+    loc: "/images/companies/zoom-logo.png",
+    company: "Zoom",
+  },
+];
