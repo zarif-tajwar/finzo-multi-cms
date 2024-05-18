@@ -28,7 +28,6 @@ export const getTestimonials = async () => {
     },
     testimony: x.testimony,
   }));
-  console.log(data);
   const parseData = TestimonialsSchema.safeParse(data);
   if (!parseData.success) return;
   return parseData.data;
