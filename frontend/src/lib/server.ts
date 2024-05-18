@@ -1,26 +1,13 @@
-import {
-  EntryFieldTypes
-} from "contentful";
 import { cache } from "react";
 import "server-only";
 import { z } from "zod";
 import { contentfulClient } from "./contentful/client";
 import { strapiClient } from "./strapi-client";
+import { TypeTestimonialSkeleton } from "./types/contentful";
 import { TestimonialsSchema } from "./validation/testimonial";
 
-type TestimonialSkeleton = {
-  contentTypeId: "testimonial";
-  fields: {
-    name: EntryFieldTypes.Text;
-    profession: EntryFieldTypes.Text;
-    testimony: EntryFieldTypes.Text;
-    image: EntryFieldTypes.AssetLink;
-  };
-};
-
-
 export const getTestimonials = async () => {
-  const data = await contentfulClient.withoutUnresolvableLinks.getEntries<TestimonialSkeleton>({
+  const data = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeTestimonialSkeleton>({
     content_type: "testimonial",
   });
   const fetchedData = data.items.map((obj) => {
