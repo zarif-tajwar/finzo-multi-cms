@@ -3,6 +3,7 @@ import { strapiClient } from "./strapi-client";
 import { TestimonialsSchema } from "./validation/testimonial";
 import { cache } from "react";
 import { z } from "zod";
+import { StrapiWebhookPayloadSchema } from "./validation/strapi";
 
 export const getTestimonials = async () => {
   const fetchedData = await strapiClient
@@ -44,3 +45,16 @@ export const getTotalUserCompanies = cache(async () => {
   if (!parsedData.success) return;
   return parsedData.data;
 });
+
+export const isValidWebhookEventForRevalidation = async (req: Request) => {
+  const payload = await req.json();
+  const parsePayload = StrapiWebhookPayloadSchema.safeParse(payload);
+  if (!parsePayload.success)
+    return {
+      error: "Webhook payload schema did not match!",
+      shouldRevalidate: false,
+    };
+  if (parsePayload.data.model === "newsletter-subscribed-email")
+    return { error: "", shouldRevalidate: false };
+  return { error: "", shouldRevalidate: true };
+};
