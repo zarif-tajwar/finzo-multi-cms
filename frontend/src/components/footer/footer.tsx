@@ -7,7 +7,7 @@ import NewsLetterForm from "./news-letter-form";
 const socialMediaLinks = [
   {
     name: "Github",
-    href: "https://github.com/zarif-tajwar/finzo-next-cms",
+    href: "https://github.com/zarif-tajwar/finzo-next-cms/tree/contentful",
     Icon: GithubIcon,
   },
   {

@@ -54,7 +54,11 @@ const MobileNavbar = () => {
             <div className="flex flex-col gap-2">
               <Button variant={"outline"}>Login</Button>
               <Button variant={"dark"} asChild>
-                <Link href={"https://github.com/zarif-tajwar/finzo-next-cms"}>
+                <Link
+                  href={
+                    "https://github.com/zarif-tajwar/finzo-next-cms/tree/contentful"
+                  }
+                >
                   <GithubIcon className="size-5" /> Github
                 </Link>
               </Button>
