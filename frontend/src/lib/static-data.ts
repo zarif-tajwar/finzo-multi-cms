@@ -59,3 +59,6 @@ export const companies = [
     company: "Zoom",
   },
 ];
+
+export const githubLink =
+  "https://github.com/zarif-tajwar/finzo-next-cms/tree/strapi";

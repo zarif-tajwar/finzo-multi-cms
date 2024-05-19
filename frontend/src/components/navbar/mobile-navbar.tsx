@@ -6,13 +6,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../button";
 import { GithubIcon, Logo } from "../icons";
+import { githubLink } from "@/lib/static-data";
 
 const navLinks = [
   { text: "Products" },
   { text: "Company" },
   { text: "Features" },
   { text: "Pricing" },
-  { text: "Features" },
 ];
 
 const MobileNavbar = () => {
@@ -54,11 +54,7 @@ const MobileNavbar = () => {
             <div className="flex flex-col gap-2">
               <Button variant={"outline"}>Login</Button>
               <Button variant={"dark"} asChild>
-                <Link
-                  href={
-                    "https://github.com/zarif-tajwar/finzo-next-cms/tree/strapi"
-                  }
-                >
+                <Link href={githubLink}>
                   <GithubIcon className="size-5" /> Github
                 </Link>
               </Button>
