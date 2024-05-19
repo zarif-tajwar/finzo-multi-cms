@@ -56,7 +56,7 @@ const MobileNavbar = () => {
               <Button variant={"dark"} asChild>
                 <Link
                   href={
-                    "https://github.com/zarif-tajwar/finzo-next-cms/tree/contentful"
+                    "https://github.com/zarif-tajwar/finzo-next-cms/tree/sanity"
                   }
                 >
                   <GithubIcon className="size-5" /> Github

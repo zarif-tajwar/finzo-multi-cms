@@ -29,9 +29,7 @@ const DesktopNavbar = () => {
         <Button variant={"ghost"}>Login</Button>
         <Button variant={"dark"} asChild>
           <Link
-            href={
-              "https://github.com/zarif-tajwar/finzo-next-cms/tree/contentful"
-            }
+            href={"https://github.com/zarif-tajwar/finzo-next-cms/tree/sanity"}
           >
             <GithubIcon className="size-5" /> Github
           </Link>
