@@ -1,13 +1,15 @@
+import Link from "next/link";
 import { Button } from "../button";
 import { Container, SecondHeading } from "../common";
 import { GithubIcon, LinkedinIcon, MailInboxIcon, XIcon } from "../icons";
 import FooterMenu from "./footer-menu";
 import NewsLetterForm from "./news-letter-form";
+import { githubLink } from "@/lib/static-data";
 
 const socialMediaLinks = [
   {
     name: "Github",
-    href: "https://github.com/zarif-tajwar/finzo-next-cms/tree/contentful",
+    href: githubLink,
     Icon: GithubIcon,
   },
   {
@@ -49,8 +51,15 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             {socialMediaLinks.map((link) => {
               return (
-                <Button key={link.name} size={"icon"} className="size-11">
-                  {<link.Icon />}
+                <Button
+                  key={link.name}
+                  asChild
+                  size={"icon"}
+                  className="size-11"
+                >
+                  <Link href={link.href} target="_blank">
+                    {<link.Icon />}
+                  </Link>
                 </Button>
               );
             })}
