@@ -42,6 +42,7 @@ const Hero = async () => {
                         fill
                         className="h-full w-full object-cover"
                         alt={`Avatar ${i}`}
+                        sizes="10vw"
                       />
                     </div>
                   );

@@ -12,7 +12,6 @@ const navLinks = [
   { text: "Company" },
   { text: "Features" },
   { text: "Pricing" },
-  { text: "Features" },
 ];
 
 const MobileNavbar = () => {

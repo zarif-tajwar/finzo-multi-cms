@@ -20,6 +20,7 @@ const HeroVisual = () => {
             width={667}
             height={1662}
             alt={"Finzo App in an IPhone."}
+            priority
           />
         </div>
         <div
@@ -34,6 +35,7 @@ const HeroVisual = () => {
             width={661}
             height={1081}
             alt={"A visa trigger of a finzo user!"}
+            priority
           />
         </div>
         <div
@@ -48,6 +50,7 @@ const HeroVisual = () => {
             width={592}
             height={697}
             alt={"One app for all!"}
+            priority
           />
         </div>
         <div
@@ -62,6 +65,7 @@ const HeroVisual = () => {
             width={592}
             height={1004}
             alt={"Secure payment!"}
+            priority
           />
         </div>
       </div>
