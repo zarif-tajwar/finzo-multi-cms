@@ -4,11 +4,12 @@ import { Container, SecondHeading } from "../common";
 import { GithubIcon, LinkedinIcon, MailInboxIcon, XIcon } from "../icons";
 import FooterMenu from "./footer-menu";
 import NewsLetterForm from "./news-letter-form";
+import { githubLink } from "@/lib/static-data";
 
 const socialMediaLinks = [
   {
     name: "Github",
-    href: "https://github.com/zarif-tajwar/finzo-next-cms/tree/sanity",
+    href: githubLink,
     Icon: GithubIcon,
   },
   {
