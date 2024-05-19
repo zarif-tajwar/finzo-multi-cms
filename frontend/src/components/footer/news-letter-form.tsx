@@ -42,7 +42,7 @@ const NewsLetterForm = () => {
       <div className="grid gap-6">
         <p className="font-medium text-white">Stay up to date</p>
         <form onSubmit={handleSubmit}>
-          <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
+          <div className="grid grid-rows-2 gap-4 sm:grid-cols-[1fr_auto] sm:grid-rows-none">
             <input
               type="email"
               name="email"

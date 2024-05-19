@@ -124,7 +124,7 @@ const FooterMenu = () => {
   return (
     <div className="flex flex-col gap-x-12 gap-y-10 xl:flex-row">
       <div className="max-w-56">
-        <Logo className="text-white" />
+        <Logo className="w-full text-white" />
         <p className="pt-3 leading-tight text-neutral-500">
           Make your complicated finance more simple
         </p>
