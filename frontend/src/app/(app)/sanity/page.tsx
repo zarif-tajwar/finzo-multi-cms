@@ -1,14 +1,14 @@
-import { newsletterSubscribeAction } from "@/lib/actions";
+import { newsletterSubscribeAction } from "@/lib/actions/actions-sanity";
 import {
   getTestimonials,
   getTotalUserCompanies,
   getTotalUsersInMillions,
-} from "@/lib/server";
-import { SetupPage } from "./_common/setup-page";
+} from "@/lib/server/fetcher-sanity";
+import { SetupPage } from "../_common/setup-page";
 
 export const revalidate = 86400;
 
-export default function Home() {
+export default function SanityPage() {
   return (
     <SetupPage
       getTestimonials={getTestimonials}
