@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "../button";
 import { Paragraph } from "../common";
 import HeroVisual from "./hero-visual";
-import { getTotalUsersInMillions } from "@/lib/server";
+import type { GetTotalUsersInMillionsType } from "@/lib/types/common";
 
 const avatars = [
   { loc: "/images/hero/avatar1.png", bg: "bg-orange-200" },
@@ -10,7 +10,11 @@ const avatars = [
   { loc: "/images/hero/avatar3.png", bg: "bg-emerald-200" },
 ];
 
-const Hero = async () => {
+const Hero = async ({
+  getTotalUsersInMillions,
+}: {
+  getTotalUsersInMillions: GetTotalUsersInMillionsType;
+}) => {
   const totalUsersInMillions = (await getTotalUsersInMillions()) || 15;
   return (
     <section className="3xl:min-h-0 3xl:h-[var(--hero-height)] 3xl:max-h-[67.5rem] flex min-h-[var(--hero-height)] items-center [--hero-height:calc(100svh-var(--nav-height))]">

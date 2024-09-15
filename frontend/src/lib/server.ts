@@ -4,8 +4,13 @@ import { TestimonialsSchema } from "./validation/testimonial";
 import { cache } from "react";
 import { z } from "zod";
 import { StrapiWebhookPayloadSchema } from "./validation/strapi";
+import {
+  GetTestimonialsType,
+  GetTotalUserCompaniesType,
+  GetTotalUsersInMillionsType,
+} from "./types/common";
 
-export const getTestimonials = async () => {
+export const getTestimonials: GetTestimonialsType = async () => {
   const fetchedData = await strapiClient
     .GET("/testimonials", {
       params: { query: { populate: "image", sort: "sortOrder:desc" } },
@@ -28,23 +33,27 @@ export const getTestimonials = async () => {
   return parseData.data;
 };
 
-export const getTotalUsersInMillions = cache(async () => {
-  const fetchedData = await strapiClient.GET("/total-user-in-millions");
-  const parsedData = z
-    .number()
-    .safeParse(fetchedData.data?.data?.attributes?.count);
-  if (!parsedData.success) return;
-  return parsedData.data;
-});
+export const getTotalUsersInMillions: GetTotalUsersInMillionsType = cache(
+  async () => {
+    const fetchedData = await strapiClient.GET("/total-user-in-millions");
+    const parsedData = z
+      .number()
+      .safeParse(fetchedData.data?.data?.attributes?.count);
+    if (!parsedData.success) return;
+    return parsedData.data;
+  },
+);
 
-export const getTotalUserCompanies = cache(async () => {
-  const fetchedData = await strapiClient.GET("/total-user-company-count");
-  const parsedData = z
-    .number()
-    .safeParse(fetchedData.data?.data?.attributes?.count);
-  if (!parsedData.success) return;
-  return parsedData.data;
-});
+export const getTotalUserCompanies: GetTotalUserCompaniesType = cache(
+  async () => {
+    const fetchedData = await strapiClient.GET("/total-user-company-count");
+    const parsedData = z
+      .number()
+      .safeParse(fetchedData.data?.data?.attributes?.count);
+    if (!parsedData.success) return;
+    return parsedData.data;
+  },
+);
 
 export const isValidWebhookEventForRevalidation = async (req: Request) => {
   const payload = await req.json();

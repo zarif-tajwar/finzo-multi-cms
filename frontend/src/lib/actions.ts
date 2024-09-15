@@ -13,6 +13,7 @@ export const newsletterSubscribeAction = async (data: { email: string }) => {
     return { error: "This email is already subscribed!" };
   }
   if (res.error) {
+    console.log(res.error.error.message);
     return { error: `Something went wrong! Please try again.` };
   }
   return { success: "Subscribed to our newsletter successfully!" };

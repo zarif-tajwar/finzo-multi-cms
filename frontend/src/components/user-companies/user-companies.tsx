@@ -1,9 +1,13 @@
-import { getTotalUserCompanies } from "@/lib/server";
+import { companies } from "@/lib/static-data";
+import type { GetTotalUserCompaniesType } from "@/lib/types/common";
 import Image from "next/image";
 import { Paragraph, SecondHeading, Section } from "../common";
-import { companies } from "@/lib/static-data";
 
-const UserCompanies = async () => {
+const UserCompanies = async ({
+  getTotalUserCompanies,
+}: {
+  getTotalUserCompanies: GetTotalUserCompaniesType;
+}) => {
   const totalUserCompanies = await getTotalUserCompanies();
   if (totalUserCompanies === undefined) return null;
   return (

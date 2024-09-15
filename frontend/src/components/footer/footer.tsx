@@ -1,10 +1,11 @@
+import { githubLink } from "@/lib/static-data";
+import type { NewsletterSubscribeActionType } from "@/lib/types/common";
 import Link from "next/link";
 import { Button } from "../button";
 import { Container, SecondHeading } from "../common";
 import { GithubIcon, LinkedinIcon, MailInboxIcon, XIcon } from "../icons";
 import FooterMenu from "./footer-menu";
 import NewsLetterForm from "./news-letter-form";
-import { githubLink } from "@/lib/static-data";
 
 const socialMediaLinks = [
   {
@@ -24,7 +25,11 @@ const socialMediaLinks = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({
+  newsletterSubscribeAction,
+}: {
+  newsletterSubscribeAction: NewsletterSubscribeActionType;
+}) => {
   return (
     <Container>
       <footer>
@@ -41,7 +46,9 @@ const Footer = () => {
                 Join our newsletter to stay upto date on features and releases.
               </p>
             </div>
-            <NewsLetterForm />
+            <NewsLetterForm
+              newsletterSubscribeAction={newsletterSubscribeAction}
+            />
           </div>
           <div className="my-20 h-0.5 w-full bg-neutral-700"></div>
           <FooterMenu />

@@ -1,7 +1,16 @@
-import { getTestimonials, getTotalUsersInMillions } from "@/lib/server";
+import {
+  GetTestimonialsType,
+  GetTotalUsersInMillionsType,
+} from "@/lib/types/common";
 import TestimonialsClient from "./testimonials-client";
 
-const Testimonials = async () => {
+const Testimonials = async ({
+  getTestimonials,
+  getTotalUsersInMillions,
+}: {
+  getTestimonials: GetTestimonialsType;
+  getTotalUsersInMillions: GetTotalUsersInMillionsType;
+}) => {
   const testimonialsPromise = getTestimonials();
   const totalUsersInMillionsPromise = getTotalUsersInMillions();
 

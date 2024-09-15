@@ -1,6 +1,6 @@
 "use client";
 
-import { newsletterSubscribeAction } from "@/lib/actions";
+import type { NewsletterSubscribeActionType } from "@/lib/types/common";
 import { cn } from "@/lib/utils";
 import { newsletterSubscribeSchema } from "@/lib/validation/news-letter";
 import Link from "next/link";
@@ -8,7 +8,11 @@ import { FormEvent, useState } from "react";
 import { Button } from "../button";
 import { CheckIcon, SpinnerIcon } from "../icons";
 
-const NewsLetterForm = () => {
+const NewsLetterForm = ({
+  newsletterSubscribeAction,
+}: {
+  newsletterSubscribeAction: NewsletterSubscribeActionType;
+}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
