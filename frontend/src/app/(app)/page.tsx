@@ -17,6 +17,9 @@ export default function Home() {
         <Button asChild variant={"outline"}>
           <Link href={"/contentful"}>contentful</Link>
         </Button>
+        <Button asChild variant={"outline"}>
+          <Link href={"/payload"}>payload</Link>
+        </Button>
       </main>
     </Container>
   );
