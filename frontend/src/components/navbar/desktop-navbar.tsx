@@ -3,7 +3,8 @@
 import { type Variants, motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "../button";
-import { GithubIcon, Logo } from "../icons";
+import { GithubIcon } from "@/components/icons";
+import { Logo } from "@/components/logo";
 import { githubLink } from "@/lib/static-data";
 
 const slideVariants: Variants = {

@@ -2,7 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
-import { Logo } from "../icons";
+import { Logo } from "@/components/logo";
 
 const footerLinks = [
   {
@@ -144,7 +144,7 @@ const slideVariants: Variants = {
 
 const FooterMenu = () => {
   return (
-    <div className="flex flex-col gap-x-12 gap-y-10 xl:flex-row">
+    <div className="flex flex-col gap-x-12 gap-y-10">
       <motion.div
         initial="initial"
         whileInView="animate"
@@ -186,7 +186,7 @@ const FooterMenu = () => {
                   {footerLink.links.map((link) => {
                     return (
                       <li key={link.text}>
-                        <Link href={link.text}>{link.text}</Link>
+                        <Link href="#">{link.text}</Link>
                       </li>
                     );
                   })}
