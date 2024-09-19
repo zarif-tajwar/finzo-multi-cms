@@ -1,12 +1,60 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { TestimonialClientData } from "@/lib/validation/testimonial";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { SplitWords } from "../animations/split-text";
 import { Button } from "../button";
 import { Paragraph, SecondHeading, Section } from "../common";
 import { Arrow } from "../icons";
-import { TestimonialClientData } from "@/lib/validation/testimonial";
+
+const MotionParagraph = motion.create(Paragraph);
+
+const headingAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const slideVariants: Variants = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+const testimonialParentVariants: Variants = {
+  initial: {},
+  animate: {},
+};
+const testimonialContentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const imageVariants: Variants = {
+  initial: {
+    x: -25,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+  },
+};
 
 const TestimonialsClient = ({
   testimonials,
@@ -18,53 +66,88 @@ const TestimonialsClient = ({
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <Section>
-      <div className="grid-cols-2 lg:grid">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: "some" }}
+        variants={headingAnimationParentVariants}
+        className="grid-cols-2 lg:grid"
+      >
         <SecondHeading className="col-start-2 col-end-2 max-w-[45rem] text-wrap lg:mx-0 lg:text-left">
-          {`Join ${totalUsersInMillions}+ million people who already trust us with their money`}
+          <SplitWords
+            variants={slideVariants}
+          >{`Join ${totalUsersInMillions}+ million people who already trust us with their money`}</SplitWords>
         </SecondHeading>
-      </div>
+      </motion.div>
       <div className="relative [--padding:2rem] md:[--padding:3rem] lg:[--padding:4rem]">
         <div>
           {testimonials.map((data, i) => {
             return (
-              <div
-                key={i}
-                className={`grid rounded-4xl bg-offwhite md:grid-cols-2 ${i === activeIndex ? "block" : "hidden"}`}
-              >
-                <div className="pt-[var(--padding)] md:pt-0">
-                  <div className="relative h-64 w-full md:h-full">
-                    <div className="absolute bottom-0 h-full w-full md:h-96 lg:h-[32rem]">
-                      <Image
-                        src={data.image.url}
-                        alt={
-                          data.image.alt
-                            ? data.image.alt
-                            : `Picture of testifier ${data.name}`
-                        }
-                        width={data.image.width}
-                        height={data.image.height}
-                        className="h-full w-full object-scale-down object-bottom"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full px-[var(--padding)] md:hidden">
-                  <div className="h-px w-full bg-neutral-200"></div>
-                </div>
-                <div className="pb-[4rem] pl-[var(--padding)] pr-[var(--padding)] pt-[var(--padding)] md:pb-[var(--padding)] md:pl-0">
-                  <Paragraph className="mb-6 line-clamp-5 min-h-[5lh] text-lg md:mb-8">
-                    {data.testimony}
-                  </Paragraph>
-                  <div className="">
-                    <p className="mb-1 text-3xl font-medium lg:text-4xl">
-                      {data.name}
-                    </p>
-                    <p className="text-xl text-neutral-500">
-                      {data.profession}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <>
+                {i === activeIndex && (
+                  <AnimatePresence key={i}>
+                    <motion.div
+                      initial="initial"
+                      animate="animate"
+                      variants={testimonialParentVariants}
+                      className={`grid rounded-4xl bg-offwhite md:grid-cols-2`}
+                    >
+                      <div className="pt-[var(--padding)] md:pt-0">
+                        <div className="relative h-64 w-full md:h-full">
+                          <motion.div
+                            variants={imageVariants}
+                            className="absolute bottom-0 h-full w-full md:h-96 lg:h-[32rem]"
+                            transition={{ duration: 0.6, ease: "backInOut" }}
+                          >
+                            <Image
+                              src={data.image.url}
+                              alt={
+                                data.image.alt
+                                  ? data.image.alt
+                                  : `Picture of testifier ${data.name}`
+                              }
+                              width={data.image.width}
+                              height={data.image.height}
+                              className="h-full w-full object-scale-down object-bottom"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="w-full px-[var(--padding)] md:hidden">
+                        <div className="h-px w-full bg-neutral-200"></div>
+                      </div>
+                      <motion.div
+                        variants={testimonialContentVariants}
+                        className="pb-[4rem] pl-[var(--padding)] pr-[var(--padding)] pt-[var(--padding)] md:pb-[var(--padding)] md:pl-0"
+                      >
+                        <MotionParagraph
+                          variants={slideVariants}
+                          className="mb-6 line-clamp-5 min-h-[5lh] text-lg md:mb-8"
+                          transition={{ duration: 0.6, ease: "backOut" }}
+                        >
+                          {data.testimony}
+                        </MotionParagraph>
+                        <div>
+                          <motion.p
+                            variants={slideVariants}
+                            className="mb-1 text-3xl font-medium lg:text-4xl"
+                            transition={{ duration: 0.4, ease: "backOut" }}
+                          >
+                            {data.name}
+                          </motion.p>
+                          <motion.p
+                            variants={slideVariants}
+                            className="text-xl text-neutral-500"
+                            transition={{ duration: 0.4, ease: "backOut" }}
+                          >
+                            {data.profession}
+                          </motion.p>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+              </>
             );
           })}
         </div>
@@ -110,14 +193,18 @@ const TestimonialsClient = ({
             return (
               <button
                 key={i}
-                className={cn(
-                  "relative h-full before:absolute before:left-0 before:top-1/2 before:h-1.5 before:w-full before:-translate-y-1/2 before:rounded-md before:bg-neutral-200 before:transition-colors before:duration-100 hover:before:bg-neutral-300",
-                  i === activeIndex &&
-                    "before:bg-neutral-500 hover:before:bg-neutral-500",
-                )}
+                className={cn("relative h-full w-full")}
                 disabled={activeIndex === i}
                 onClick={() => setActiveIndex(i)}
-              ></button>
+              >
+                <span className="absolute left-0 top-[5px] z-10 inline-block h-1.5 w-full rounded-md bg-neutral-200"></span>
+                {activeIndex === i && (
+                  <motion.span
+                    layoutId="indicator"
+                    className="absolute left-0 top-[5px] z-20 inline-block h-1.5 w-full rounded-md bg-neutral-300"
+                  ></motion.span>
+                )}
+              </button>
             );
           })}
         </div>
