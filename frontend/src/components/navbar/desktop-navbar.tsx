@@ -1,7 +1,27 @@
+"use client";
+
+import { type Variants, motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "../button";
 import { GithubIcon, Logo } from "../icons";
 import { githubLink } from "@/lib/static-data";
+
+const slideVariants: Variants = {
+  initial: {
+    y: -40,
+    scale: 0.95,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "backInOut",
+    },
+  },
+};
 
 const navLinks = [
   { text: "Products" },
@@ -12,7 +32,13 @@ const navLinks = [
 
 const DesktopNavbar = () => {
   return (
-    <div className="relative hidden h-full flex-row items-center lg:flex lg:justify-between">
+    <motion.div
+      variants={slideVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ amount: "some", once: true }}
+      className="relative hidden h-full origin-top flex-row items-center lg:flex lg:justify-between"
+    >
       <Logo className="hidden lg:inline-block" />
       <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center justify-between lg:flex">
         {navLinks.map((link) => {
@@ -33,7 +59,7 @@ const DesktopNavbar = () => {
           </Link>
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
