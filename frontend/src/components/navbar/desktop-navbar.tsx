@@ -25,10 +25,10 @@ const slideVariants: Variants = {
 };
 
 const navLinks = [
-  { text: "Products" },
-  { text: "Company" },
-  { text: "Features" },
-  { text: "Pricing" },
+  { text: "Sanity", href: "/sanity" },
+  { text: "Contentful", href: "/contentful" },
+  { text: "Strapi", href: "/strapi" },
+  { text: "Payload", href: "/payload" },
 ];
 
 const DesktopNavbar = () => {
@@ -45,7 +45,7 @@ const DesktopNavbar = () => {
         {navLinks.map((link) => {
           return (
             <li key={link.text}>
-              <Link href="#" className="px-4 py-2.5 text-sm font-bold">
+              <Link href={link.href} className="px-4 py-2.5 text-sm font-bold">
                 {link.text}
               </Link>
             </li>

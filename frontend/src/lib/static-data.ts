@@ -60,5 +60,4 @@ export const companies = [
   },
 ];
 
-export const githubLink =
-  "https://github.com/zarif-tajwar/finzo-next-cms/tree/strapi";
+export const githubLink = "https://github.com/zarif-tajwar/finzo-next-cms";

@@ -41,7 +41,7 @@ const Footer = ({
           <FooterMenu />
         </div>
         <div className="flex justify-between gap-8 py-9">
-          <p>© 2024 Finzo. All Right Reserved</p>
+          <p>Finzo © 2024, Developed by Zarif Tajwar</p>
           <div className="flex items-center gap-2">
             {socialMediaLinks.map((link) => {
               return (

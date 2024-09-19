@@ -12,10 +12,10 @@ import { githubLink } from "@/lib/static-data";
 const MotionButton = motion.create(Button);
 
 const navLinks = [
-  { text: "Products" },
-  { text: "Company" },
-  { text: "Features" },
-  { text: "Pricing" },
+  { text: "Sanity", href: "/sanity" },
+  { text: "Contentful", href: "/contentful" },
+  { text: "Strapi", href: "/strapi" },
+  { text: "Payload", href: "/payload" },
 ];
 
 const slideVariants: Variants = {
@@ -101,7 +101,7 @@ const MobileNavbar = () => {
                   return (
                     <motion.li variants={navItemVariants} key={link.text}>
                       <Link
-                        href="#"
+                        href={link.href}
                         className="inline-block px-5 py-1 text-sm font-bold"
                       >
                         {link.text}
