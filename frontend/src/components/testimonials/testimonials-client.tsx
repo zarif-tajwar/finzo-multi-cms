@@ -145,6 +145,7 @@ const TestimonialsClient = ({
         </div>
         <div className="absolute bottom-[var(--padding)] right-[var(--padding)] flex gap-2 lg:gap-4">
           <Button
+            aria-label="go-left"
             onClick={() => {
               setActiveIndex((curr) => {
                 if (curr === 0) return curr;
@@ -159,6 +160,7 @@ const TestimonialsClient = ({
             <Arrow className="rotate-180" />
           </Button>
           <Button
+            aria-label="go-right"
             onClick={() => {
               setActiveIndex((curr) => {
                 if (curr === testimonials.length - 1) return curr;
@@ -184,6 +186,7 @@ const TestimonialsClient = ({
           {testimonials.map((_, i) => {
             return (
               <button
+                aria-label={`set active ${i}`}
                 key={i}
                 className={cn("relative h-full w-full")}
                 disabled={activeIndex === i}

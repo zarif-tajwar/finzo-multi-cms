@@ -46,6 +46,7 @@ const Footer = ({
             {socialMediaLinks.map((link) => {
               return (
                 <Button
+                  aria-label={link.name}
                   key={link.name}
                   asChild
                   size={"icon"}

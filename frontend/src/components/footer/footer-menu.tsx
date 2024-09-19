@@ -174,12 +174,12 @@ const FooterMenu = () => {
           {footerLinks.map((footerLink) => {
             return (
               <motion.li key={footerLink.heading}>
-                <motion.h4
+                <motion.h3
                   variants={slideVariants}
                   className="mb-3 font-medium text-white"
                 >
                   {footerLink.heading}
-                </motion.h4>
+                </motion.h3>
                 <motion.ul
                   variants={slideVariants}
                   className="space-y-2 text-sm font-medium text-neutral-500"
