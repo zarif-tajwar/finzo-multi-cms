@@ -6,8 +6,9 @@ import { useClickOutside } from "@mantine/hooks";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../button";
-import { GithubIcon, Logo } from "../icons";
+import { GithubIcon } from "../icons";
 import { githubLink } from "@/lib/static-data";
+import { Logo } from "../logo";
 
 const MotionButton = motion.create(Button);
 
@@ -77,7 +78,7 @@ const MobileNavbar = () => {
       className="flex h-full items-center lg:hidden"
     >
       <div className="relative flex w-full origin-top items-center justify-between">
-        <Logo className="" />
+        <Logo />
         <Button
           size={"icon"}
           onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
