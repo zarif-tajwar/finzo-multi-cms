@@ -166,5 +166,6 @@ export interface TotalUserCompany {
 
 
 declare module 'payload' {
+  // @ts-ignore 
   export interface GeneratedTypes extends Config {}
 }

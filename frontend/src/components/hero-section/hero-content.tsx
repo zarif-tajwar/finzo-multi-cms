@@ -4,6 +4,7 @@ import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { SplitWords } from "../animations/split-text";
 import { Button } from "../button";
+import LandingPageReminder from "../landing-page-reminder";
 
 const avatars = [
   { loc: "/images/hero/avatar1.png", bg: "bg-orange-200" },
@@ -56,14 +57,18 @@ export const HeroContent = ({
         {`From easy money management, to financial goals and investments. Open your account in a Flash!`}
       </motion.p>
       <div className="mb-16 grid w-full gap-x-5 gap-y-2 sm:flex sm:w-auto sm:flex-row lg:mb-8">
-        <Button asChild>
-          <motion.button variants={slideVariants}>Open Account</motion.button>
-        </Button>
-        <Button variant={"outline"} asChild>
-          <motion.button variants={slideVariants}>
-            Generate your card
-          </motion.button>
-        </Button>
+        <LandingPageReminder>
+          <Button asChild>
+            <motion.button variants={slideVariants}>Open Account</motion.button>
+          </Button>
+        </LandingPageReminder>
+        <LandingPageReminder>
+          <Button variant={"outline"} asChild>
+            <motion.button variants={slideVariants}>
+              Generate your card
+            </motion.button>
+          </Button>
+        </LandingPageReminder>
       </div>
       <div className="flex flex-col items-center gap-8 md:flex-row">
         <motion.div variants={slideVariants} className="flex">

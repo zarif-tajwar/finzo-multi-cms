@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import LandingPageReminder from "../landing-page-reminder";
 
 const footerLinks = [
   {
@@ -186,7 +187,11 @@ const FooterMenu = () => {
                   {footerLink.links.map((link) => {
                     return (
                       <li key={link.text}>
-                        <Link href="#">{link.text}</Link>
+                        <LandingPageReminder>
+                          <Link href="#" scroll={false}>
+                            {link.text}
+                          </Link>
+                        </LandingPageReminder>
                       </li>
                     );
                   })}

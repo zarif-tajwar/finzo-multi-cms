@@ -2,7 +2,7 @@ import "server-only";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { cache } from "react";
 import { z } from "zod";
-import { Media } from "../payload/payload-types";
+import { Media } from "../../../payload-types";
 import configPromise from "../payload/payload.config";
 import { StrapiWebhookPayloadSchema } from "../validation/strapi";
 import { TestimonialsSchema } from "../validation/testimonial";

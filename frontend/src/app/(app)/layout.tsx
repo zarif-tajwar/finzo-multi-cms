@@ -3,6 +3,7 @@ import "./globals.css";
 import { primaryFont } from "./_fonts/primary";
 import Navbar from "@/components/navbar/navbar";
 import { ReactLenis } from "@/lib/lenis";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <ReactLenis root options={{ lerp: 0.085 }}>
           <Navbar />
           {children}
+          <Toaster />
         </ReactLenis>
       </body>
     </html>

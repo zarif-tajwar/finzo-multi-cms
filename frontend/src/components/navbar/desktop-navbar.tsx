@@ -6,6 +6,7 @@ import { Button } from "../button";
 import { GithubIcon } from "@/components/icons";
 import { Logo } from "@/components/logo";
 import { githubLink } from "@/lib/static-data";
+import LandingPageReminder from "../landing-page-reminder";
 
 const slideVariants: Variants = {
   initial: {
@@ -53,7 +54,9 @@ const DesktopNavbar = () => {
         })}
       </ul>
       <div className="flex gap-4">
-        <Button variant={"ghost"}>Login</Button>
+        <LandingPageReminder>
+          <Button variant={"ghost"}>Login</Button>
+        </LandingPageReminder>
         <Button variant={"dark"} asChild>
           <Link href={githubLink}>
             <GithubIcon className="size-5" /> Github

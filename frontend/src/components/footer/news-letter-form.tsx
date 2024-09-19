@@ -9,6 +9,7 @@ import { FormEvent, useState } from "react";
 import { Button } from "../button";
 import { SecondHeading } from "../common";
 import { CheckIcon, MailInboxIcon, SpinnerIcon } from "../icons";
+import LandingPageReminder from "../landing-page-reminder";
 
 const MotionSecondHeading = motion.create(SecondHeading);
 const MotionButton = motion.create(Button);
@@ -145,12 +146,15 @@ const NewsLetterForm = ({
             className="font-medium text-neutral-400"
           >
             By subscribing you agree to our{" "}
-            <Link
-              href={"#"}
-              className="text-nowrap text-neutral-200 underline transition-colors duration-100 hover:text-white"
-            >
-              Privacy Policy
-            </Link>
+            <LandingPageReminder>
+              <Link
+                href={"#"}
+                scroll={false}
+                className="text-nowrap text-neutral-200 underline transition-colors duration-100 hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+            </LandingPageReminder>
           </motion.p>
         </div>
       </motion.div>
