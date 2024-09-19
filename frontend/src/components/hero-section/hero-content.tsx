@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { Button } from "../button";
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
+import { SplitWords } from "../animations/split-text";
+import { Button } from "../button";
 
 const avatars = [
   { loc: "/images/hero/avatar1.png", bg: "bg-orange-200" },
@@ -43,21 +44,10 @@ export const HeroContent = ({
       variants={heroAnimationParent}
       className="flex flex-col items-center pt-0 lg:block lg:max-w-[32.625rem]"
     >
-      <h1
-        className="mb-6 text-center text-5xl font-bold tracking-tight sm:text-6xl sm:font-medium md:text-7xl lg:text-left xl:text-8xl"
-        style={{ whiteSpace: "pre-wrap" }}
-      >
-        {`Control your financial future easily`
-          .split(/(\s+)/)
-          .map((word, i) => (
-            <motion.span
-              variants={slideVariants}
-              style={{ whiteSpace: "pre-wrap", display: "inline-block" }}
-              key={i}
-            >
-              {word}
-            </motion.span>
-          ))}
+      <h1 className="mb-6 text-center text-5xl font-bold tracking-tight sm:text-6xl sm:font-medium md:text-7xl lg:text-left xl:text-8xl">
+        <SplitWords variants={slideVariants}>
+          Control your financial future easily
+        </SplitWords>
       </h1>
       <motion.p
         variants={slideVariants}
