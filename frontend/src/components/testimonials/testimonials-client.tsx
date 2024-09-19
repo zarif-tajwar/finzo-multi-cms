@@ -64,6 +64,7 @@ const TestimonialsClient = ({
   totalUsersInMillions: number;
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const activeTestimonial = testimonials.at(activeIndex)!;
   return (
     <Section>
       <motion.div
@@ -81,75 +82,66 @@ const TestimonialsClient = ({
       </motion.div>
       <div className="relative [--padding:2rem] md:[--padding:3rem] lg:[--padding:4rem]">
         <div>
-          {testimonials.map((data, i) => {
-            return (
-              <>
-                {i === activeIndex && (
-                  <AnimatePresence key={i}>
-                    <motion.div
-                      initial="initial"
-                      animate="animate"
-                      variants={testimonialParentVariants}
-                      className={`grid rounded-4xl bg-offwhite md:grid-cols-2`}
-                    >
-                      <div className="pt-[var(--padding)] md:pt-0">
-                        <div className="relative h-64 w-full md:h-full">
-                          <motion.div
-                            variants={imageVariants}
-                            className="absolute bottom-0 h-full w-full md:h-96 lg:h-[32rem]"
-                            transition={{ duration: 0.6, ease: "backInOut" }}
-                          >
-                            <Image
-                              src={data.image.url}
-                              alt={
-                                data.image.alt
-                                  ? data.image.alt
-                                  : `Picture of testifier ${data.name}`
-                              }
-                              width={data.image.width}
-                              height={data.image.height}
-                              className="h-full w-full object-scale-down object-bottom"
-                            />
-                          </motion.div>
-                        </div>
-                      </div>
-                      <div className="w-full px-[var(--padding)] md:hidden">
-                        <div className="h-px w-full bg-neutral-200"></div>
-                      </div>
-                      <motion.div
-                        variants={testimonialContentVariants}
-                        className="pb-[4rem] pl-[var(--padding)] pr-[var(--padding)] pt-[var(--padding)] md:pb-[var(--padding)] md:pl-0"
-                      >
-                        <MotionParagraph
-                          variants={slideVariants}
-                          className="mb-6 line-clamp-5 min-h-[5lh] text-lg md:mb-8"
-                          transition={{ duration: 0.6, ease: "backOut" }}
-                        >
-                          {data.testimony}
-                        </MotionParagraph>
-                        <div>
-                          <motion.p
-                            variants={slideVariants}
-                            className="mb-1 text-3xl font-medium lg:text-4xl"
-                            transition={{ duration: 0.4, ease: "backOut" }}
-                          >
-                            {data.name}
-                          </motion.p>
-                          <motion.p
-                            variants={slideVariants}
-                            className="text-xl text-neutral-500"
-                            transition={{ duration: 0.4, ease: "backOut" }}
-                          >
-                            {data.profession}
-                          </motion.p>
-                        </div>
-                      </motion.div>
-                    </motion.div>
-                  </AnimatePresence>
-                )}
-              </>
-            );
-          })}
+          <motion.div
+            key={activeIndex}
+            initial="initial"
+            animate="animate"
+            variants={testimonialParentVariants}
+            className={`grid rounded-4xl bg-offwhite md:grid-cols-2`}
+          >
+            <div className="pt-[var(--padding)] md:pt-0">
+              <div className="relative h-64 w-full md:h-full">
+                <motion.div
+                  variants={imageVariants}
+                  className="absolute bottom-0 h-full w-full md:h-96 lg:h-[32rem]"
+                  transition={{ duration: 0.6, ease: "backInOut" }}
+                >
+                  <Image
+                    src={activeTestimonial.image.url}
+                    alt={
+                      activeTestimonial.image.alt
+                        ? activeTestimonial.image.alt
+                        : `Picture of testifier ${activeTestimonial.name}`
+                    }
+                    width={activeTestimonial.image.width}
+                    height={activeTestimonial.image.height}
+                    className="h-full w-full object-scale-down object-bottom"
+                  />
+                </motion.div>
+              </div>
+            </div>
+            <div className="w-full px-[var(--padding)] md:hidden">
+              <div className="h-px w-full bg-neutral-200"></div>
+            </div>
+            <motion.div
+              variants={testimonialContentVariants}
+              className="pb-[4rem] pl-[var(--padding)] pr-[var(--padding)] pt-[var(--padding)] md:pb-[var(--padding)] md:pl-0"
+            >
+              <MotionParagraph
+                variants={slideVariants}
+                className="mb-6 line-clamp-5 min-h-[5lh] text-lg md:mb-8"
+                transition={{ duration: 0.6, ease: "backOut" }}
+              >
+                {activeTestimonial.testimony}
+              </MotionParagraph>
+              <div>
+                <motion.p
+                  variants={slideVariants}
+                  className="mb-1 text-3xl font-medium lg:text-4xl"
+                  transition={{ duration: 0.4, ease: "backOut" }}
+                >
+                  {activeTestimonial.name}
+                </motion.p>
+                <motion.p
+                  variants={slideVariants}
+                  className="text-xl text-neutral-500"
+                  transition={{ duration: 0.4, ease: "backOut" }}
+                >
+                  {activeTestimonial.profession}
+                </motion.p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
         <div className="absolute bottom-[var(--padding)] right-[var(--padding)] flex gap-2 lg:gap-4">
           <Button
