@@ -27,6 +27,7 @@
     "contentful": "^10.15.1",
     "contentful-management": "^11.33.0",
     "framer-motion": "^11.5.4",
+    "lenis": "^1.1.13",
     "next": "14.2.3",
     "next-sanity": "^9.4.7",
     "openapi-fetch": "^0.9.5",

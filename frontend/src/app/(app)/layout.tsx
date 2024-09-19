@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { primaryFont } from "./_fonts/primary";
 import Navbar from "@/components/navbar/navbar";
+import { ReactLenis } from "@/lib/lenis";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${primaryFont.variable} font-primary`}>
-        <Navbar />
-        {children}
+        <ReactLenis root options={{ lerp: 0.085 }}>
+          <Navbar />
+          {children}
+        </ReactLenis>
       </body>
     </html>
   );
