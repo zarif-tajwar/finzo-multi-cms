@@ -4,10 +4,10 @@ export const metadata: Metadata = {
   title: "Finzo Finance",
   description: "Control your financial future easily",
   openGraph: {
-    images: "/opg.jpg",
+    images: "/images/opg.jpg",
   },
   metadataBase: !!process.env.VERCEL
-    ? undefined
+    ? new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`)
     : new URL("http://localhost:3000"),
 };
 
