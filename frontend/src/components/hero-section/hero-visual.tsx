@@ -57,8 +57,8 @@ const HeroVisual = () => {
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
 
-      visaCardX.set(((mouseY * 50) / height - 100) * -1);
-      visaCardY.set((mouseX * 50) / width - 25);
+      visaCardX.set(((mouseY * 100) / height - 120) * -1);
+      visaCardY.set((mouseX * 100) / width + 50);
 
       oneAppCardX.set(((mouseY * 20) / height + 120) * -1);
       oneAppCardY.set((mouseX * 20) / width - 40);
