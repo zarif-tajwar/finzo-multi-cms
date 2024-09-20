@@ -17,6 +17,7 @@ const heroAnimationParent: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.06,
+      delayChildren: 0.3,
     },
   },
 };
@@ -41,7 +42,7 @@ export const HeroContent = ({
     <motion.div
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true, amount: "some" }}
+      viewport={{ once: true, amount: 0.5 }}
       variants={heroAnimationParent}
       className="flex flex-col items-center pt-0 lg:block lg:max-w-[32.625rem]"
     >

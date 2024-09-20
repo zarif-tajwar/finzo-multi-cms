@@ -24,6 +24,7 @@ const headingAnimationParentVariants: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.06,
+      delayChildren: 0.2,
     },
   },
 };
@@ -129,7 +130,7 @@ const Features = () => {
       <MotionSecondHeading
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: "some" }}
+        viewport={{ once: true, amount: 0.8 }}
         variants={headingAnimationParentVariants}
       >
         <SplitWords variants={slideVariants}>

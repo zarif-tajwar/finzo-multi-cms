@@ -19,6 +19,7 @@ const contentParentVariants: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.1,
+      delayChildren: 0.3,
     },
   },
 };
@@ -72,7 +73,7 @@ const NewsLetterForm = ({
       <motion.div
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: "some" }}
+        viewport={{ once: true, amount: 0.8 }}
         variants={contentParentVariants}
       >
         <motion.div
@@ -97,7 +98,7 @@ const NewsLetterForm = ({
       <motion.div
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: "some" }}
+        viewport={{ once: true, amount: 0.8 }}
         variants={contentParentVariants}
         className="w-full max-w-105 lg:ml-auto lg:pt-[6.5rem]"
       >

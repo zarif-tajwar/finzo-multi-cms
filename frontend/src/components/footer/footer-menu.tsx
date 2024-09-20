@@ -128,6 +128,7 @@ const contentParentVariants: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
@@ -149,7 +150,7 @@ const FooterMenu = () => {
       <motion.div
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: "some" }}
+        viewport={{ once: true, amount: 0.8 }}
         variants={contentParentVariants}
         className="max-w-56"
       >
@@ -167,7 +168,7 @@ const FooterMenu = () => {
         <motion.ul
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: "some" }}
+          viewport={{ once: true, amount: 0.8 }}
           variants={contentParentVariants}
           className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4 lg:flex lg:justify-between"
         >
