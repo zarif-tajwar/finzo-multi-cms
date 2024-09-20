@@ -8,6 +8,7 @@ import { SetupPage } from "../_common/setup-page";
 import { Metadata } from "next";
 
 export const revalidate = 86400;
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Finzo Finance on Sanity",
