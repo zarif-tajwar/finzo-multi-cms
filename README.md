@@ -2,7 +2,7 @@
 
 A dynamic landing page showcasing engaging UI animations and multi-CMS integration using Sanity, Contentful, Strapi and Payload.
 
-frontend/public/videos/showcasing-finzo.mp4
+[![Finzo](https://res.cloudinary.com/dwwqgvfux/image/upload/v1726990951/lvwxcxmtg1qncttzporw.png)](https://vimeo.com/1011331155)
 
 ## Table of Contents
 
